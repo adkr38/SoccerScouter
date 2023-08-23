@@ -27,8 +27,14 @@ const Nav = () => {
 
     const pStyling =
         theme ==="light"
-    ?"font-mono text-md text-neutral-700"
-    :"font-mono text-md text-neutral-200"
+    ?"font-mono text-xs sm:text-base text-neutral-700"
+    :"font-mono text-xs sm:text-base text-neutral-200"
+
+    const buttonStyling =
+        theme ==="light"
+    ?"font-mono text-xs sm:text-base text-neutral-700 border-zinc-400 border rounded-lg px-3 py-1 sm:px-2 hover:bg-neutral-400 active:bg-neutral-500 active:border-neutral-200 shadow-inner"
+    :"font-mono text-xs sm:text-base text-neutral-200 border-zinc-600 border rounded-lg px-3 py-1 sm:px-2 hover:bg-neutral-600 active:bg-neutral-500 active:border-neutral-800 shadow-inner"
+
     const iconStyling =
         theme ==="light"
     ?"text-md text-neutral-700"
@@ -42,7 +48,7 @@ const Nav = () => {
 
         <nav className={navStyling}>
 
-        <div className="absolute left-3 h-8 w-14 flex items-center justify-center">
+        <div className="absolute left-1 sm:left-3 h-8 w-14 flex items-center justify-center">
             <div className={navItem}>
                 <img src={logoSrc} />
             </div>
@@ -68,6 +74,14 @@ const Nav = () => {
         <p className={pStyling}>
             Stats
 </p>
+
+            </div>
+
+            <div className={navItem}>
+
+        <button className={buttonStyling}>
+           Log In
+</button>
 
             </div>
 
