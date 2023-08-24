@@ -7,8 +7,8 @@ const Nav = () => {
     const {theme,toggleTheme} = React.useContext(ThemeContext)
     const navStyling =
         theme === "light"
-        ?"justify-end relative w-full h-12 flex items-center bg-neutral-300 p-4 drop-shadow-md "
-        :"justify-end relative w-full h-12 flex items-center bg-neutral-700 p-4 drop-shadow-md "
+        ?"z-50 justify-end relative w-full h-12 flex items-center bg-neutral-300 p-4 drop-shadow-md "
+        :"z-50 justify-end relative w-full h-12 flex items-center bg-neutral-700 p-4 drop-shadow-md "
 
     const navItem =
         theme === "light"

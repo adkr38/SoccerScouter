@@ -1,14 +1,22 @@
-import React from "react"
 import Nav from "./components/Nav"
-import Console from "./components/Console"
+import Hero from "./components/Hero"
+import React from "react"
+import { ThemeContext } from "./context/ThemeContext"
+
 
 function App() {
 
+    const {theme,toggleTheme} = React.useContext(ThemeContext)
+    const consoleStyling =
+        theme === "light"
+        ?"w-screen h-screen bg-zinc-100"
+        :"w-screen h-screen bg-zinc-700"
+
   return (
-      <>
+      <div className={consoleStyling} >
       <Nav/>
-      <Console/>
-      </>
+      <Hero/>
+      </div>
   )
 }
 
