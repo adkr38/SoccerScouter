@@ -1,9 +1,15 @@
 import {ThemeContext} from "../context/ThemeContext"
+import {useViewport} from "../context/ViewportContext"
 import React from "react";
 import * as fa from "react-icons/fa"
+import * as ri from "react-icons/ri"
+import * as bs from "react-icons/bs"
+import * as pi from "react-icons/pi"
+
 
 const Nav = () => {
 
+    const viewportSize = useViewport()
     const {theme,toggleTheme} = React.useContext(ThemeContext)
     const navStyling =
         theme === "light"
@@ -22,8 +28,8 @@ const Nav = () => {
 
     const logoSrc =
         theme ==="light"
-    ?"public/soccer_logo_black.png"
-    :"public/soccer_logo_white.png"
+    ?"soccer_logo_black.png"
+    :"soccer_logo_white.png"
 
     const pStyling =
         theme ==="light"
@@ -32,8 +38,8 @@ const Nav = () => {
 
     const buttonStyling =
         theme ==="light"
-    ?"font-mono text-xs sm:text-base text-neutral-700 border-zinc-400 border rounded-lg px-3 py-1 sm:px-2 hover:bg-neutral-400 active:bg-neutral-500 active:border-neutral-200 shadow-inner"
-    :"font-mono text-xs sm:text-base text-neutral-200 border-zinc-600 border rounded-lg px-3 py-1 sm:px-2 hover:bg-neutral-600 active:bg-neutral-500 active:border-neutral-800 shadow-inner"
+    ?"font-mono text-xs sm:text-base text-neutral-700 border-zinc-400 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-400 sm:px-2  active:shadow-inner active:shadow-neutral-400"
+    :"font-mono text-xs sm:text-base text-neutral-200 border-zinc-700 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-900 sm:px-2  active:shadow-inner active:shadow-neutral-900 "
 
     const iconStyling =
         theme ==="light"
@@ -56,24 +62,36 @@ const Nav = () => {
 
         <div className="h-8 flex items-center justify-center align-middle">
             <div className={navItem}>
-        <p className={pStyling}>
-                Scout
-</p>
+        {
+            viewportSize==="sm"
+            ?<ri.RiSpyLine className={iconStyling}> </ri.RiSpyLine>
+            :<p className={pStyling}>Scout</p>
+
+        }
             </div>
 
             <div className={navItem}>
 
-        <p className={pStyling}>
-                Rankings
-</p>
+        {
+            viewportSize==="sm"
+            ?<pi.PiShootingStarLight className={iconStyling}> </pi.PiShootingStarLight>
+            :<p className={pStyling}>Rankings</p>
+
+        }
+
 
             </div>
 
             <div className={navItem}>
 
-        <p className={pStyling}>
-            Stats
-</p>
+        {
+            viewportSize==="sm"
+            ?<bs.BsClipboardData className={iconStyling}> </bs.BsClipboardData>
+            :<p className={pStyling}>Stats</p>
+
+
+        }
+
 
             </div>
 
