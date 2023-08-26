@@ -10,7 +10,7 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "watch-css": "tailwindcss build -i ./src/index.css -o ./dist/output.css --watch",
     "preview": "vite preview",
-    "deploy": "gh-pages -d ."
+    "deploy": "build && gh-pages -d dist"
   },
   "dependencies": {
     "react": "^18.2.0",
