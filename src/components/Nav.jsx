@@ -33,13 +33,13 @@ const Nav = () => {
 
     const pStyling =
         theme ==="light"
-    ?"font-mono text-xs sm:text-base text-neutral-700"
-    :"font-mono text-xs sm:text-base text-neutral-200"
+    ?"font-mont_n text-xs sm:text-base text-neutral-700"
+    :"font-mont_n text-xs sm:text-base text-neutral-200"
 
     const buttonStyling =
         theme ==="light"
-    ?"font-mono text-xs sm:text-base text-neutral-700 border-zinc-400 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-400 sm:px-2  active:shadow-inner active:shadow-neutral-400"
-    :"font-mono text-xs sm:text-base text-neutral-200 border-zinc-700 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-900 sm:px-2  active:shadow-inner active:shadow-neutral-900 "
+    ?"font-mont_n text-xs sm:text-base text-neutral-700 border-zinc-400 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-400 sm:px-2  active:shadow-inner active:shadow-neutral-400"
+    :"font-mont_n text-xs sm:text-base text-neutral-200 border-zinc-700 border rounded-lg px-3 py-1 shadow-sm shadow-neutral-900 sm:px-2  active:shadow-inner active:shadow-neutral-900 "
 
     const iconStyling =
         theme ==="light"
