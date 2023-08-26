@@ -3,6 +3,16 @@ export default {
   content: ["./index.html","./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
+       fontFamily: {
+          cmu_n: ['cmu_n', 'Arial', 'sans'],
+          cmu_it: ['cmu_it', 'Arial', 'sans'],
+          georgia: ['georgia', 'Arial', 'sans'],
+          times_n: ['times', 'Arial', 'sans'],
+          times_it: ['times_it', 'Arial', 'sans'],
+          mont_n: ['mont_n', 'Arial', 'sans'],
+          mont_it: ['mont_it', 'Arial', 'sans']
+        }
+        ,
       keyframes: {
         'fade-out-semi': {
           '0%': { opacity: '20%' },
