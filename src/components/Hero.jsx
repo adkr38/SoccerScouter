@@ -44,8 +44,8 @@ const Hero = () =>{
 
     const badgeContainer=
         theme ==="light"
-    ?"duration-[400ms] active:scale-[90%] active:shadow-inner active:shadow-neutral-400 shadow-neutral-300 shadow-md hover:scale-[110%] hover:z-50 p-8 w-full h-full rounded-md border border-neutral-200 flex items-center justify-center bg-neutral-300 text-center"
-    :"duration-[400ms] active:scale-[90%] active:shadow-inner active:shadow-neutral-600 shadow-neutral-800 shadow-md hover:scale-[110%] hover:z-50 p-8 w-full h-full rounded-md border border-neutral-600 flex items-center justify-center bg-neutral-900 text-center"
+    ?"duration-[400ms]  active:shadow-inner active:shadow-neutral-400 shadow-neutral-300 shadow-md hover:z-50 p-8 w-full h-full rounded-sm border border-neutral-200 flex items-center justify-center bg-neutral-300 text-center"
+    :"duration-[400ms]  active:shadow-inner active:shadow-neutral-600 shadow-neutral-800 shadow-md hover:z-50 p-8 w-full h-full rounded-sm border border-neutral-600 flex items-center justify-center bg-neutral-900 text-center"
 
 
 
