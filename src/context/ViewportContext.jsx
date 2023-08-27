@@ -14,7 +14,7 @@ export function ViewportProvider({children}){
     function getViewportSize(){
         const width = window.innerWidth;
         switch(true){
-            case width <= 540:
+            case width <= 650:
                 return "sm";
             case width <= 768:
                 return "md";

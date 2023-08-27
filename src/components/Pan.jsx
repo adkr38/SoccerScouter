@@ -11,13 +11,13 @@ const Pan = ({children,boxStyling,innerStyling}) => {
 
     const panStyling =
         theme ==="light"
-    ?`p-12 bg-neutral-300  shadow-inner shadow-neutral-300  ${innerStyling}`
-    :`p-12 bg-neutral-900  shadow-inner shadow-neutral-800  ${innerStyling}`
+    ?`rounded-b-lg p-12 bg-neutral-300  shadow-inner shadow-neutral-300  ${innerStyling}`
+    :`rounded-b-lg p-12 bg-neutral-900  shadow-inner shadow-neutral-800  ${innerStyling}`
 
     const upperBand=
         theme ==="light"
-    ?" px-6 relative w-full h-10 bg-neutral-200 flex items-center align-middle gap-3 justify-end"
-    :" px-6 relative w-full h-10 bg-neutral-800 flex items-center align-middle gap-3 justify-end"
+    ?" px-6 relative w-full h-10 bg-neutral-200 flex items-center align-middle gap-3 justify-end rounded-t-lg"
+    :" px-6 relative w-full h-10 bg-neutral-800 flex items-center align-middle gap-3 justify-end rounded-t-lg"
 
     const iconStyling =
         theme ==="light"
@@ -29,7 +29,11 @@ const Pan = ({children,boxStyling,innerStyling}) => {
     return(
         <div className={boxStyling}>
             <div className={upperBand}>
-        <bi.BiText className={iconStyling} onClick={toggleTextMode}/>
+        {
+            textMode
+            ?<bi.BiSmile className={iconStyling} onClick={toggleTextMode}/>
+            :<bi.BiText className={iconStyling} onClick={toggleTextMode}/>
+        }
 
             </div>
 
