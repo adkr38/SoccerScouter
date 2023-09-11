@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: 'cmu_n';
   src: url('/fonts/cmu_regular.ttf') format('truetype');
@@ -49,3 +50,90 @@
   font-weight: normal;
   font-style: italic;
 }
+
+@layer base {
+    :root{
+        --gradient-angle:360deg;
+        --background:0% 0% 100%;
+        --ring: 120 5% 64.9%;
+        --sample-opacity:1;
+    }
+}
+
+@property --gradient-angle {
+  syntax: '<angle>'; /* <- defined as type angle for the transition to work */
+  initial-value: 360deg;
+  inherits: false;
+}
+
+
+.important-button{
+    animation: gradient-rotate 5s linear infinite reverse;
+    background:linear-gradient(var(--gradient-angle),rgb(80,80,80), rgb(115 115 115), rgb(163 163 163),rgb(229 229 229));
+    transition:background 3s;
+}
+
+.important-button-dark{
+    animation: gradient-rotate 5s linear infinite;
+    background:linear-gradient(var(--gradient-angle), rgb(115 115 115),rgb(100 100 100 ) , rgb(50 50 50 ),rgb(0 0 0));
+}
+
+
+
+.important-button-dark:active{
+    background:transparent;
+}
+
+.important-button:active{
+    background:transparent;
+}
+
+
+
+@keyframes gradient-rotate{
+  0% {
+    --gradient-angle: 360deg;
+  }
+
+
+  100%{
+    --gradient-angle:0deg;
+  }
+}
+
+@keyframes moving-bg{
+  0% {
+    transform:translate(0);
+  }
+
+
+  100%{
+    transform:translateY(-50%);
+  }
+}
+
+
+    /* background-image:url("./autumn.svg"); */
+
+    /* background-repeat:repeat; */
+
+    /* background-image: linear-gradient(to right, #8882 1px, transparent 1px), */
+    /* linear-gradient(to bottom, #8882 1px, transparent 1px); */
+    /* background-size:3rem 3rem; */
+
+.moving-leaves{
+    will-change:transform;
+    background-image:url("./autumn.svg") ;
+    animation: moving-bg 20s linear infinite;
+
+  }
+
+/* .moving-leaves{ */
+/*     will-change:transform; */
+/*     animation: moving-bg 20s linear infinite; */
+/*     background-image: linear-gradient(to right, #8882 1px, transparent 1px), */
+/*     linear-gradient(to bottom, #8882 1px, transparent 1px); */
+/*     background-size:3rem 3rem; */
+/*   } */
+
+
