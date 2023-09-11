@@ -1,6 +1,57 @@
 import React from "react"
 import {ThemeContext} from "../context/ThemeContext"
 import * as fi from "react-icons/fi"
+import {SoccerFeature,SoccerPossition} from "../enums/CardEnums"
+
+const Card = (props) =>{
+    const {title, enums,theme,positioning} = props
+
+    const titleStyling =
+        theme==="light"
+    ?"font-times_n text-lg text-neutral-900"
+    :"font-times_n text-lg text-neutral-200"
+
+    const shadowHover =
+        theme==="light"
+            ?""
+            :"shadow-[2.5rem_2.5rem_4rem_-1rem_#0004,inset_1rem_1rem_4rem_-1rem_#fff1]"
+
+    const minorShadowHover="shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(10,10,10,0.2)]"
+
+    const cardBackground =
+        theme ==="light"
+    ?`absolute group flex flex-col w-[20rem] gap-4 rounded-2xl border border-neutral-300 bg-neutral-100 p-7 drop-shadow-[1rem_1rem_3rem_rgba(20,20,20,0.1)] duration-300 hover:-skew-x-3 hover:scale-105 hover:shadow-[2.5rem_2.5rem_4rem_-1rem_#0004,inset_1rem_1rem_4rem_-1rem_#fff1]`
+    :`absolute group flex flex-col w-[20rem] gap-4 rounded-2xl border border-neutral-700 bg-neutral-900 p-7 drop-shadow-[1rem_1rem_3rem_rgba(20,20,20,0.1)] duration-300 hover:-skew-x-3 hover:scale-105  hover:shadow-[2.5rem_2.5rem_4rem_-1rem_#0004,inset_1rem_1rem_4rem_-1rem_#fff1]`
+
+    return(
+        <div className={`group ${positioning}`}>
+            <div className={cardBackground}>
+                <p className={titleStyling}>
+                    {title}
+                </p>
+
+            <div className="flex gap-3">
+                <p className={enums[0].styling + ` duration-300 group-hover:-translate-y-2 group-hover:${minorShadowHover}`}>{enums[0].name}</p>
+                <p className={enums[1].styling + ` duration-300 group-hover:-translate-y-2 group-hover:${minorShadowHover}`}>{enums[1].name}</p>
+
+            </div>
+            <div className={`duration-300 bg-gray-200 rounded-2xl h-[10rem] p-4 flex gap-4 flex-col group-hover:${minorShadowHover} group-hover:-translate-y-3`}>
+                <div className="w-full h-[1rem] bg-neutral-900 rounded-full"/>
+                <div className="w-3/4 h-[0.5rem] bg-neutral-50 rounded-full"/>
+                <div className="w-1/2 h-[0.5rem] bg-neutral-300 rounded-full"/>
+                <div className="w-3/4 h-[0.5rem] bg-neutral-500 rounded-full"/>
+                <div className="w-1/3 h-[0.5rem] bg-neutral-50 rounded-full"/>
+            </div>
+
+            </div>
+
+        </div>
+
+
+
+    )
+
+}
 
 const Hero = () =>{
     const {theme} = React.useContext(ThemeContext)
@@ -138,7 +189,7 @@ const Hero = () =>{
 
         </div>
 
-        <div className="relative hidden w-full h-full lg:grid col-start-3 col-end-4 row-start-1 row-end-1">
+        <div className="relative hidden w-full h-full lg:grid col-start-3 col-end-4 row-start-1 row-end-2 items-center">
             <div className="absolute -inset-60 top-1/2 -translate-y-1/2 translate-x-[-30px] overflow-hidden rounded-full">
                 <div className="relative w-full h-full">
                     <div className={movingLeaves} />
@@ -146,8 +197,8 @@ const Hero = () =>{
                 </div>
             </div>
 
-                <div></div>
-                <div></div>
+        <Card positioning = "-translate-y-[2rem] translate-x-[4rem]" title="Who's the most similar FW to Messi?" enums = {[SoccerPossition.FW,SoccerFeature.SIMILARITY]} theme = {theme}/>
+        <Card positioning="-translate-y-[20rem] -translate-x-[5rem]" title="Looking for veteran mifdielder with exceptional passing" enums = {[SoccerPossition.MF,SoccerFeature.PASSING]} theme = {theme}/>
         </div>
 
     </div>
