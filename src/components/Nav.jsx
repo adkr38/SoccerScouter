@@ -1,6 +1,7 @@
 import {ThemeContext} from "../context/ThemeContext"
 import {useViewport} from "../context/ViewportContext"
 import React from "react";
+import { Link } from "react-router-dom"
 import * as fa from "react-icons/fa"
 import * as ri from "react-icons/ri"
 import * as bs from "react-icons/bs"
@@ -55,12 +56,17 @@ const Nav = () => {
         <nav className={navStyling}>
 
         <div className="absolute left-1 sm:left-3 h-8 w-14 flex items-center justify-center">
+        <Link to="/">
             <div className={navItem}>
                 <img src={logoSrc} />
             </div>
+
+        </Link>
         </div>
 
         <div className="h-8 flex items-center justify-center align-middle">
+
+            <Link to="/scouting">
             <div className={navItem}>
         {
             viewportSize==="sm"
@@ -69,7 +75,9 @@ const Nav = () => {
 
         }
             </div>
+        </Link>
 
+            <Link to="/rankings">
             <div className={navItem}>
 
         {
@@ -79,9 +87,10 @@ const Nav = () => {
 
         }
 
-
             </div>
+            </Link>
 
+        <Link to="/stats">
             <div className={navItem}>
 
         {
@@ -94,7 +103,8 @@ const Nav = () => {
 
 
             </div>
-
+        </Link>
+        <Link to="/logIn">
             <div className={navItem}>
 
         <button className={buttonStyling}>
@@ -102,6 +112,7 @@ const Nav = () => {
 </button>
 
             </div>
+        </Link>
 
 
         <div className={navItem2}>

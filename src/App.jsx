@@ -1,8 +1,9 @@
 import Nav from "./components/Nav"
-// import Hero from "./components/Hero"
-import Hero from "./components/Hero2"
+import Forum from "./components/Forum"
+import Hero from "./components/Hero"
 import React from "react"
 import { ThemeContext } from "./context/ThemeContext"
+import {HashRouter , Route, Routes } from "react-router-dom"
 
 
 function App() {
@@ -17,15 +18,15 @@ function App() {
 
 
   return (
-
-
-      <>
-      <div className={wrapperStyling}>
-          <Nav/>
-          <Hero/>
-          <Hero/>
-      </div>
-      </>
+        <HashRouter>
+            <div className={wrapperStyling}>
+                <Nav />
+                <Routes>
+                    <Route path="/" element={<Hero />} />
+                    <Route path="/forum" element={<Forum />} />
+                </Routes>
+            </div>
+        </HashRouter>
 
   )
 }
