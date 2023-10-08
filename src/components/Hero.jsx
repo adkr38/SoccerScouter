@@ -13,12 +13,28 @@ const Card = (props) =>{
     ?"font-times_n text-lg text-neutral-900"
     :"font-times_n text-lg text-neutral-200"
 
-    const minorShadowHover="shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(10,10,10,0.2)]"
+    const minorShadowHover=
+        theme ==="light"
+    ?"shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(10,10,10,0.2)]"
+    :"shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(200,200,200,1)]"
 
     const cardBackground =
         theme ==="light"
     ?`absolute group flex flex-col w-[20rem] gap-4 rounded-2xl border border-neutral-300 bg-neutral-100 p-7 drop-shadow-[1rem_1rem_3rem_rgba(20,20,20,0.1)] duration-300 hover:-skew-x-3 hover:scale-105 hover:shadow-[2.5rem_2.5rem_4rem_-1rem_#0004,inset_1rem_1rem_4rem_-1rem_#fff1]`
     :`absolute group flex flex-col w-[20rem] gap-4 rounded-2xl border border-neutral-700 bg-neutral-900 p-7 drop-shadow-[1rem_1rem_3rem_rgba(20,20,20,0.3)] duration-300 hover:-skew-x-3 hover:scale-105  hover:shadow-[2.5rem_2.5rem_4rem_-1rem_#0004,inset_1rem_1rem_4rem_-1rem_#fff1]`
+
+
+    const pColorVariants =
+        {
+            "light": " duration-300 group-hover:shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(10,10,10,0.2)] group-hover:-translate-y-2" ,
+            "dark": " duration-300 group-hover:shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(100,100,100,0.5)] group-hover:-translate-y-2" ,
+        }
+
+    const fakeTextColorVariants = {
+            "light": "duration-300 bg-gray-200 rounded-2xl h-[10rem] p-4 flex gap-4 flex-col  group-hover:-translate-y-3 group-hover:shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(10,10,10,0.2)]" ,
+            "dark": "duration-300 bg-gray-200 rounded-2xl h-[10rem] p-4 flex gap-4 flex-col  group-hover:-translate-y-3 group-hover:shadow-[0.4rem_0.4rem_0.2rem_-0.1rem_rgba(100,100,100,1)]" ,
+    }
+
 
     return(
         <div className={`group ${positioning}`}>
@@ -28,11 +44,11 @@ const Card = (props) =>{
                 </p>
 
             <div className="flex gap-3">
-                <p className={enums[0].styling + ` duration-300 group-hover:-translate-y-2 group-hover:${minorShadowHover}`}>{enums[0].name}</p>
-                <p className={enums[1].styling + ` duration-300 group-hover:-translate-y-2 group-hover:${minorShadowHover}`}>{enums[1].name}</p>
+                <p className={enums[0].styling + pColorVariants[theme] }>{enums[0].name}</p>
+                <p className={enums[1].styling + pColorVariants[theme] }>{enums[1].name}</p>
 
             </div>
-            <div className={`duration-300 bg-gray-200 rounded-2xl h-[10rem] p-4 flex gap-4 flex-col group-hover:${minorShadowHover} group-hover:-translate-y-3`}>
+            <div className= {fakeTextColorVariants[theme]}>
                 <div className="w-full h-[1rem] bg-neutral-900 rounded-full"/>
                 <div className="w-3/4 h-[0.5rem] bg-neutral-50 rounded-full"/>
                 <div className="w-1/2 h-[0.5rem] bg-neutral-300 rounded-full"/>
@@ -143,7 +159,7 @@ const Hero = () =>{
         <div className="grid grid-rows-2 grid-cols-2 sm:grid-rows-1 items-center justify-center align-middle gap-6 col-start-1 col-end-3 lg:col-end-2 row-start-3 row-end-4 max-w-[55ch] text-center place-items-center">
 
 
-            <a className={buttonStyling} href="https://www.twitter.com/sscouter" target="_blank">
+            <a className={buttonStyling} href="https://www.twitter.com/soccerscoutingapp" target="_blank">
 
                 <p >
                     Twitter
