@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently \"vite\" \"npm run watch-css\" ",
-    "build": "vite build",
+    "build": "vite build && tailwindcss build -i ./src/index.css -o ./dist/output.css",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "watch-css": "tailwindcss build -i ./src/index.css -o ./dist/output.css --watch",
     "preview": "vite preview",
