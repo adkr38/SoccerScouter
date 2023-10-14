@@ -75,29 +75,29 @@ const Hero = () =>{
 
     const pStyling =
         theme ==="light"
-    ?"font-times_n font-black text-6xl text-transparent bg-gradient-to-br from-neutral-900 to-neutral-600 bg-clip-text"
-    :"font-times_n font-black text-6xl text-transparent bg-gradient-to-br from-neutral-400 to-neutral-500 bg-clip-text"
+    ?"font-times_n font-black text-4xl sm:text-6xl text-transparent bg-gradient-to-br from-neutral-900 to-neutral-600 bg-clip-text"
+    :"font-times_n font-black text-4xl sm:text-6xl text-transparent bg-gradient-to-br from-neutral-400 to-neutral-500 bg-clip-text"
 
     const pStylingFormal =
         theme ==="light"
-    ?"font-cmu_it text-black text-xl"
-    :"font-cmu_it text-stone-200 text-xl"
+    ?"font-cmu_it text-black text-md sm:text-xl"
+    :"font-cmu_it text-stone-200 text-md sm:text-xl"
 
 
     const logoStyling =
         theme === "light"
-            ?"flex items-center justify-center align-middle w-28 h-28 rounded-3xl p-3 bg-neutral-800 relative"
-            :"flex items-center justify-center align-middle w-28 h-28 rounded-3xl p-3 bg-neutral-900 relative"
+            ?"flex items-center justify-center align-middle w-20 h-20 sm:w-28 sm:h-28 rounded-3xl p-3 bg-neutral-800 relative"
+            :"flex items-center justify-center align-middle w-20 h-20 sm:w-28 sm:h-28 rounded-3xl p-3 bg-neutral-900 relative"
 
     const logoImgStyling =
         theme ==="light"
-    ?"absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 col-start-1 col-end-1"
-    :"absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 col-start-1 col-end-1"
+    ?"absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 sm:w-20 sm:h-20 col-start-1 col-end-1"
+    :"absolute top-[53%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 sm:w-20 sm:h-20 col-start-1 col-end-1"
 
     const buttonStyling =
         theme ==="light"
-    ?"inline-flex items-center align-middle justify-center gap-2 font-mont_n text-sm text-base text-neutral-700 border-zinc-400 border rounded-lg px-4 py-2 shadow-sm shadow-neutral-400 sm:px-2  active:shadow-inner active:shadow-neutral-400 cursor-pointer hover:bg-neutral-200"
-    :"inline-flex items-center align-middle justify-center gap-2 font-mont_n text-sm text-base text-stone-200 border-zinc-700 border rounded-lg px-4 py-2  shadow-sm shadow-neutral-900 sm:px-2  active:shadow-inner active:shadow-neutral-800 cursor-pointer hover:bg-neutral-900"
+    ?"inline-flex items-center align-middle justify-center gap-2 font-mont_n text-xs sm:text-sm text-base text-neutral-700 border-zinc-400 border rounded-lg px-2 py-2 shadow-sm shadow-neutral-400 sm:px-4 active:shadow-inner active:shadow-neutral-400 cursor-pointer hover:bg-neutral-200"
+    :"inline-flex items-center align-middle justify-center gap-2 font-mont_n text-xs sm:text-sm text-base text-stone-200 border-zinc-700 border rounded-lg px-2 py-2  shadow-sm shadow-neutral-900 sm:px-4  active:shadow-inner active:shadow-neutral-800 cursor-pointer hover:bg-neutral-900"
 
     const fancyButtonStyling =
         theme ==="light"
@@ -106,13 +106,13 @@ const Hero = () =>{
 
     const buttonSpan =
         theme ==="light"
-    ?"font-mont_n text-sm inline-flex h-full w-fit items-center gap-1 rounded-lg bg-neutral-100 px-3 py-1.5 text-neutral-700 transition-all duration-300 group-hover:bg-neutral-300 group-active:shadow-inner group-active:shadow-neutral-200"
-    :"font-mont_n text-sm inline-flex h-full w-fit items-center gap-1 rounded-lg bg-neutral-800 px-4 py-1.5 text-neutral-200 transition-all duration-300 group-hover:bg-neutral-900 group-active:shadow-inner group-active:shadow-neutral-800"
+    ?"font-mont_n text-xs sm:text-sm inline-flex h-full w-fit items-center gap-1 rounded-lg bg-neutral-100 px-3 py-1.5 text-neutral-700 transition-all duration-300 group-hover:bg-neutral-300 group-active:shadow-inner group-active:shadow-neutral-200"
+    :"font-mont_n text-xs sm:text-sm inline-flex h-full w-fit items-center gap-1 rounded-lg bg-neutral-800 px-4 py-1.5 text-neutral-200 transition-all duration-300 group-hover:bg-neutral-900 group-active:shadow-inner group-active:shadow-neutral-800"
 
     const iconStyling=
         theme ==="light"
-    ?"text-lg text-neutral-600"
-    :"text-lg text-stone-200"
+    ?"text-md sm:text-lg text-neutral-600"
+    :"text-md sm:text-lg text-stone-200"
 
 
     const shadowFade =
@@ -129,8 +129,8 @@ const Hero = () =>{
 
     return(
 
-        <div className="relative overflow-hidden w-full h-screen grid items-center grid-flow-col place-items-center justify-center align-middle grid-cols-1 lg:grid-cols-3">
-        <div className="z-10 w-full h-[60%] grid place-items-center justify-center align-middle grid-rows-3 col-start-1 col-end-2 lg:col-end-3" >
+        <div className="pt-12 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 overflow-hidden w-full h-screen grid items-center grid-flow-col place-items-center justify-center align-middle grid-cols-1 lg:grid-cols-3">
+        <div className="z-10 w-[22rem] h-[22rem] sm:w-full grid place-items-center justify-center align-middle grid-rows-3 col-start-1 col-end-2 lg:col-end-3" >
             <div className="flex items-center align-middle justify-center gap-4 row-start-1 row-end-1  ">
                 <div className={logoStyling}>
                     <img src="soccer_logo_white.png" className={logoImgStyling}/>
